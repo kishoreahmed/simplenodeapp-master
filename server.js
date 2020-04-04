@@ -5,7 +5,7 @@ let runningMessage = 'Server is running on port ' + port;
 
 app.get('/', (req, res) => {
   console.log('API was successfully requested');
-  res.send("V1");
+  res.send("<B>V2</B>");
   res.send(runningMessage);
 });
 
