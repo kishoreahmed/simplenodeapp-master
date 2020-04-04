@@ -4,9 +4,14 @@ const port = process.env.PORT || 4005;
 let runningMessage = 'Server is running on port ' + port;
 
 app.get('/', (req, res) => {
+  var fs = require("fs");
+  fs.readFile('demofile1.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+  });
   console.log('API was successfully requested');
-  res.send("<B>V2</B>");
-  res.send(runningMessage);
+  
 });
 
 const server = app.listen(port, () => {
